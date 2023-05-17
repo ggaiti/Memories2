@@ -25,20 +25,20 @@ const Post = ({ post, setCurrentId }) => {
         image={post.selectedFile}
         title={post.title}
       />
-      <div className={classes.overlay}>
-        <Typography variant="h6">{post.creator}</Typography>
-        <Typography variant="body2">
-          {moment(post.createdAt).fromNow()}
-        </Typography>
-      </div>
-      <div className={classes.overlays2}>
+      <div className={classes.overlay2}>
         <Button
-          style={{ color: "gray" }}
+          style={{ color: "white" }}
           size="small"
           onClick={() => setCurrentId(post._id)}
         >
           <MoreHorizIcon fontSize="medium" />
         </Button>
+      </div>
+      <div className={classes.overlay}>
+        <Typography variant="h6">{post.creator}</Typography>
+        <Typography variant="body2">
+          {moment(post.createdAt).fromNow()}
+        </Typography>
       </div>
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary">
@@ -49,7 +49,7 @@ const Post = ({ post, setCurrentId }) => {
         {post.title}
       </Typography>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="body2" color="textSecondary" component="p">
           {post.message}
         </Typography>
       </CardContent>
@@ -60,7 +60,7 @@ const Post = ({ post, setCurrentId }) => {
           onClick={() => dispatch(likePost(post._id))}
         >
           <ThumbUpAltIcon fontSize="small" />
-          Like
+          &nbsp; Like &nbsp;
           {post.likeCount}
         </Button>
         <Button

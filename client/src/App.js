@@ -6,6 +6,7 @@ import Form from "./components/Form/Form";
 import { getPosts } from "./actions/posts";
 import useStyles from "./styles";
 import { useDispatch } from "react-redux";
+
 const App = () => {
   const [currentId, setCurrentId] = useState(null);
   const classes = useStyles();
@@ -29,6 +30,7 @@ const App = () => {
       <Grow in>
         <Container>
           <Grid
+            className={classes.mainContainer}
             container
             justifyContent="space-between"
             alignItems="stretch"
